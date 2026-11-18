@@ -1,0 +1,58 @@
+{
+  "name": "copy-lines",
+  "displayName": "Copy Lines",
+  "description": "Copy a line reference, with or without the line text, using a full or workspace-relative path.",
+  "version": "0.1.0",
+  "publisher": "local",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "main": "./extension.js",
+  "scripts": {
+    "test": "node format.js"
+  },
+  "contributes": {
+    "commands": [
+      {
+        "command": "copyLines.position.full",
+        "title": "Position (Full Path)",
+        "category": "CL"
+      },
+      {
+        "command": "copyLines.position.relative",
+        "title": "Position (Relative Path)",
+        "category": "CL"
+      },
+      {
+        "command": "copyLines.content.full",
+        "title": "Position + Content (Full Path)",
+        "category": "CL"
+      },
+      {
+        "command": "copyLines.content.relative",
+        "title": "Position + Content (Relative Path)",
+        "category": "CL"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "copyLines.position.full",
+          "group": "9_cutcopypaste@20"
+        },
+        {
+          "command": "copyLines.position.relative",
+          "group": "9_cutcopypaste@21"
+        },
+        {
+          "command": "copyLines.content.full",
+          "group": "9_cutcopypaste@22"
+        },
+        {
+          "command": "copyLines.content.relative",
+          "group": "9_cutcopypaste@23"
+        }
+      ]
+    }
+  }
+}
